@@ -1,4 +1,13 @@
 /* ---------------------------- */
+/* Custom properties ---------- */
+/* ---------------------------- */
+:root {
+    --clr-dark: 230 35% 7%;
+    --clr-light: 231 77% 90%;
+    --clr-white: 0 0% 100%;
+}
+
+/* ---------------------------- */
 /* Reset ---------------------- */
 /* ---------------------------- */
 
@@ -95,4 +104,33 @@ select {
 .box {
     background: lightblue;
     padding: 3rem;
+}
+
+/* Colors */
+.bg-dark {
+    background-color: hsl(var(--clr-dark));
+}
+
+.bg-light {
+    background-color: hsl(var(--clr-light));
+}
+
+.bg-white {
+    background-color: hsl(var(--clr-white));
+}
+
+.text-dark {
+    color: hsl(var(--clr-dark));
+}
+
+.text-light {
+    color: hsl(var(--clr-light));
+}
+
+.text-white {
+    color: hsl(var(--clr-white));
+}
+
+.example-component {
+    background-color: hsl(var(--clr-light) / .2);
 }
