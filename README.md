@@ -15,3 +15,8 @@ A Space Travel website built with HTML, CSS, and JavaScript
 - Adding the spacing
   - Utility are very common (.m-1, .m-2, etc.)
   - We don't really need that in this design, and we can use something else that will speed things up
+- Interactive elements
+  - The explore button
+  - Underlined indicators
+  - Dot indicators
+  - Number indicators
