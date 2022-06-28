@@ -20,6 +20,7 @@
     <div class="container">
         <h1>Design system</h1>
 
+        <!-- Colors -->
         <section id="colors" style="margin: 4rem 0">
             <h2 class="numbered-title"><span>01</span> colors</h2>
             <div class="bg-light text-dark" style="padding: 1rem">
@@ -61,8 +62,9 @@
             </div>
         </section>
 
+        <!-- Typography -->
         <section id="typography" style="margin: 4rem 0">
-            <h2  class="numbered-title"><span>02 </span>Typography</h2>
+            <h2 class="numbered-title"><span>02 </span>Typography</h2>
             <div class="flex">
                 <div class="flow" style="flex-basis: 100%; padding: 1em">
                     <div>
@@ -83,7 +85,8 @@
                     </div>
                     <div>
                         <p class="text-light">Heading 5 - Barlow Condensed Regular - 28px - 4.75 Character Space</p>
-                        <p class="text-light fs-500 ff-sans-cond uppercase letter-spacing-1">So, you want to travel to space</p>
+                        <p class="text-light fs-500 ff-sans-cond uppercase letter-spacing-1">So, you want to travel to
+                            space</p>
                     </div>
 
                 </div>
@@ -116,6 +119,54 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Interactive elements -->
+        <section class="flow" id="interactive-elements">
+            <h2 class="numbered-title"><span>03</span> Interactive elements</h2>
+
+            <!-- navigation -->
+            <div>
+                <nav>
+                    <ul class="primary-navigation underline-indicators flex">
+                        <li class="active"><a class="uppercase text-white letter-spacing-2"
+                                href="#"><span>01</span>Active</a>
+                        <li><a class="uppercase text-white letter-spacing-2" href="#"><span>02</span>Hovered</a>
+                        <li><a class="uppercase text-white letter-spacing-2" href="#"><span>03</span>Idle</a>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="flex">
+                <div style="margin-top: 5rem">
+                    <!-- explore button -->
+                    <a href="#" class="large-button uppercase ff-serif fs-600 text-dark bg-white">Explore</a>
+                </div>
+
+                <div class="flow" style="margin-bottom: 50vh">
+                    <!-- Tabs -->
+                    <div class="tab-list underline-indicators flex">
+                        <button aria-selected="true" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Moon</button>
+                        <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Mars</button>
+                        <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Europa</button>
+                    </div>
+
+                    <!-- Dots -->
+                    <div class="dot-indicators flex">
+                        <button aria-selected="true"><span class="sr-only">Slide title</span></button>
+                        <button aria-selected="false"><span class="sr-only">Slide title</span></button>
+                        <button aria-selected="false"><span class="sr-only">Slide title</span></button>
+                    </div>
+
+                    <!-- Numbers -->
+                    <div class="number-indicators grid">
+                        <button aria-selected="true" class="ff-serif">1</button>
+                        <button aria-selected="false" class="ff-serif">2</button>
+                        <button aria-selected="false" class="ff-serif">3</button>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
     </div>
