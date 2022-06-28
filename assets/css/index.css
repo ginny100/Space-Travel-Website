@@ -211,6 +211,21 @@ select {
     border: 0;
 }
 
+.skip-to-content {
+    position: absolute;
+    z-index: 9999;
+    background: hsl(var(--clr-white));
+    color: hsl(var(--clr-dark));
+    padding: .5em 1em;
+    margin-inline: auto;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+    transform: translateY(0);
+}
+
 .box {
     background: lightblue;
     padding: 3rem;
@@ -360,14 +375,34 @@ select {
     transform: scale(1.5);
 }
 
+/* primary-header */
+.logo {
+    margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+    justify-content: space-between;
+    align-items: center;
+}
+
 .primary-navigation {
     /* This selector should be written before media query.
        Otherwise, it will be overriden by the following media query in this case */
+    --gap: clamp(1.5rem, 7vw, 3.5rem);
     --underline-gap: 2rem;
     list-style: none;
     padding: 0;
     margin: 0;
     background: hsl(var(--clr-dark) / 0.95);
+}
+
+.primary-navigation a {
+    text-decoration: none;
+}
+
+.primary-navigation a>span {
+    font-weight: 700;
+    margin-right: .5em;
 }
 
 @supports(backdrop-filter: blur(1rem)) {
@@ -392,6 +427,11 @@ select {
         margin: 0;
         flex-direction: column;
         transform: translateX(100%);
+        transition: transform 500ms ease-in-out;
+    }
+
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0);
     }
 
     .mobile-nav-toggle {
@@ -408,18 +448,51 @@ select {
         border: 0;
     }
 
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(../img/shared/icon-close.svg)
+    }
+
+    .mobile-nav-toggle:focus-visible {
+        outline: 5px solid white;
+        outline-offset: 5px;
+    }
+
     .primary-navigation.underline-indicators>.active {
         border: 0;
     }
 }
 
-.primary-navigation a {
-    text-decoration: none;
+@media (min-width: 35em) {
+    .primary-navigation {
+        padding-inline: clamp(3rem, 5vw, 7rem);
+    }
 }
 
-.primary-navigation a>span {
-    font-weight: 700;
-    margin-right: .5em;
+@media (min-width: 35em) and (max-width: 44.999em) {
+    .primary-navigation a>span {
+        display: none;
+    }
+}
+
+@media (min-width: 45em) {
+    .primary-header::after {
+        content: '';
+        display: block;
+        position: relative;
+        height: 1px;
+        width: 100%;
+        margin-right: -2.5rem;
+        background: hsl(var(--clr-white) / .25);
+        order: 1;
+    }
+
+    nav {
+        order: 2;
+    }
+
+    .primary-navigation {
+        margin-block: 2rem;
+    }
 }
 
 .underline-indicators>* {
