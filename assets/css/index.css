@@ -1,6 +1,7 @@
 /* ---------------------------- */
 /* Custom properties ---------- */
 /* ---------------------------- */
+
 :root {
     /* colors */
     --clr-dark: 230 35% 7%;
@@ -8,12 +9,12 @@
     --clr-white: 0 0% 100%;
 
     /* font-sizes */
-    --fs-900: 9.375rem;
-    --fs-800: 6.25rem;
-    --fs-700: 3.5rem;
-    --fs-600: 2rem;
+    --fs-900: clamp(5rem, 7vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
     --fs-500: 1.75rem;
-    --fs-400: 1.125rem;
+    --fs-400: 0.9375rem;
     --fs-300: 1rem;
     --fs-200: 0.875rem;
 
@@ -21,6 +22,25 @@
     --ff-serif: "Bellefair", serif;
     --ff-sans-cond: "Barlow Condensed", sans-serif;
     --ff-sans-normal: "Barlow", sans-serif;
+}
+
+@media (min-width: 35em) {
+    :root {
+        --fs-800: 5rem;
+        --fs-700: 2.5rem;
+        --fs-600: 1.5rem;
+        --fs-400: 1rem;
+    }
+}
+
+@media (min-width: 45em) {
+    :root {
+        /* font-sizes */
+        --fs-800: 6.25rem;
+        --fs-700: 3.5rem;
+        --fs-600: 2rem;
+        --fs-400: 1.125rem;
+    }
 }
 
 /* ---------------------------- */
@@ -57,7 +77,7 @@ h5,
 h6,
 p {
     font-weight: 400;
-    font-family: 'Barlow';
+    /* font-family: 'Barlow'; */
     /* font-size: ; */
 }
 
@@ -69,6 +89,8 @@ body {
     background-color: hsl(var(--clr-dark));
     line-height: 1.5;
     min-height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr;
 }
 
 /* Reset images */
@@ -103,6 +125,8 @@ select {
 /* Utility classes ------------ */
 /* ---------------------------- */
 
+/* general */
+
 .flex {
     display: flex;
     gap: var(--gap, 1rem);
@@ -111,6 +135,10 @@ select {
 .grid {
     display: grid;
     gap: var(--gap, 1rem);
+}
+
+.d-block {
+    display: block;
 }
 
 .flow>*:where(:not(:first-child)) {
@@ -127,20 +155,47 @@ select {
 }
 
 .grid-container {
+    text-align: center;
+    /* border: 5px solid limegreen; */
     display: grid;
-    column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(2em, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
+    place-items: center;
+    padding-inline: 1rem;
 }
 
-.grid-container > *:first-child {
-    grid-column: 2;
+.grid-container * {
+    max-width: 50ch;
+}
+
+@media (min-width: 45em) {
+    .grid-container {
+        text-align: left;
+        column-gap: var(--container-gap, 2rem);
+        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
+    }
+
+    .grid-container>*:first-child {
+        grid-column: 2;
+        /* outline: 1px solid red; */
+    }
+
+    .grid-container>*:last-child {
+        grid-column: 3;
+        /* outline: 1px solid yellow; */
+    }
+
+    .grid-container--home {
+        padding-bottom: max(6rem, 20vh);
+        align-items: end;
+    }
+}
+
+/* .grid-container>*:first-child {
     outline: 1px solid red;
 }
 
-.grid-container > *:last-child {
-    grid-column: 3;
+.grid-container>*:last-child {
     outline: 1px solid yellow;
-}
+} */
 
 .sr-only {
     position: absolute;
@@ -270,7 +325,9 @@ select {
 /* ---------------------------- */
 /* Components ----------------- */
 /* ---------------------------- */
+
 .large-button {
+    font-size: 2rem;
     position: relative;
     /* 0 top & bottom, 2em left & right */
     display: inline-grid;
@@ -385,4 +442,31 @@ select {
 
 .number-indicators>[aria-selected="false"] {
     color: hsl(var(--clr-white));
+}
+
+/* ---------------------------- */
+/* Page specific background --- */
+/* ---------------------------- */
+
+body {
+    background-size: cover;
+    background-position: bottom center;
+}
+
+/* home */
+.home {
+    background-image: url(../img/home/background-home-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+    .home {
+        background-position: center center;
+        background-image: url(../img/home/background-home-tablet.jpg);
+    }
+}
+
+@media (min-width: 45rem) {
+    .home {
+        background-image: url(../img/home/background-home-desktop.jpg);
+    }
 }
