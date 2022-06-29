@@ -1,37 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32x32.png">
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Our custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/index.css">
   <title>Frontend Mentor | Space tourism website</title>
+
+  <!-- JavaScript file -->
+  <script src="../../assets/js/index.js" defer></script>
 </head>
-<body>
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
+<body class="destination">
+  <a class="skip-to-content" href="#main">Skip to content</a>
+  <header class="primary-header flex">
+    <!-- logo -->
+    <div>
+      <img src="../../assets/img/shared/logo.svg" alt="space tourism logo" class="logo">
+    </div>
 
-  01 Pick your destination
+    <!-- hamburger menu button -->
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+      <span class="sr-only" aria-expanded="false">Menu</span>
+    </button>
 
-  Moon
-  Mars
-  Europa
-  Titan
+    <!-- navbar -->
+    <nav>
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+        <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span
+              aria-hidden="true">00</span>Home</a>
+        <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="./destination.html"><span
+              aria-hidden="true">01</span>Destination</a>
+        <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="./crew.html"><span
+              aria-hidden="true">02</span>Crew</a>
+        <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="./technology.html"><span
+              aria-hidden="true">03</span>Technology</a>
+      </ul>
+    </nav>
 
-  Moon
+    <!-- my ::after goes here -->
+  </header>
 
-  See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
-  regain perspective and come back refreshed. While you’re there, take in some history 
-  by visiting the Luna 2 and Apollo 11 landing sites.
+  <main id="main" class="grid-container grid-container--destination flow">
+    <!-- destination title -->
+    <h1 class="numbered-title"><span aria-hidden="true">01</span> Pick your destination</h1>
 
-  Avg. distance
-  384,400 km
+    <!-- destination image -->
+    <img src="../../assets/img/destination/image-moon.png" alt="the moon">
 
-  Est. travel time
-  3 days
-</body>
+    <!-- destination tabs -->
+    <div class="tab-list underline-indicators flex">
+      <button aria-selected="true" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Moon</button>
+      <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Mars</button>
+      <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Europa</button>
+      <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Titan</button>
+    </div>
+
+    <!-- destination content -->
+    <article class="destination-info">
+      <!-- name -->
+      <h2 class="fs-800 uppercase ff-serif">Moon</h2>
+
+      <!-- information -->
+      <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help
+        regain perspective and come back refreshed. While you’re there, take in some history
+        by visiting the Luna 2 and Apollo 11 landing sites.
+      </p>
+
+      <!-- stats -->
+      <div class="destination-meta flex">
+        <!-- distance -->
+        <div>
+          <h3 class="text-light fs-200 uppercase">Avg. distance</h3>
+          <p class="ff-serif uppercase">384,400 km</p>
+        </div>
+        <!-- est. travel time -->
+        <div>
+          <h3 class="text-light fs-200 uppercase">Est. travel time</h3>
+          <p class="ff-serif uppercase">3 days</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <body>
+
+  </body>
+
 </html>
