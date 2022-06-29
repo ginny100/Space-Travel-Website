@@ -59,18 +59,23 @@
     <h1 class="numbered-title"><span aria-hidden="true">01</span> Pick your destination</h1>
 
     <!-- destination image -->
-    <img src="../../assets/img/destination/image-moon.png" alt="the moon">
+    <picture>
+      <!-- provide multiple versions of an image, 
+        the browser will get to choose whatever it supports -->
+      <source srcset="../../assets/img/destination/image-moon.webp" type="image/webp">
+      <img src="../../assets/img/destination/image-moon.png" alt="the moon">
+    </picture>
 
     <!-- destination tabs -->
     <div class="tab-list underline-indicators flex">
-      <button aria-selected="true" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Moon</button>
-      <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Mars</button>
-      <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Europa</button>
-      <button aria-selected="false" class="uppercase ff-sans-cond text-light bg-dark letter-spacing-2">Titan</button>
+      <button aria-selected="true" class="uppercase ff-sans-cond text-light letter-spacing-2">Moon</button>
+      <button aria-selected="false" class="uppercase ff-sans-cond text-light letter-spacing-2">Mars</button>
+      <button aria-selected="false" class="uppercase ff-sans-cond text-light letter-spacing-2">Europa</button>
+      <button aria-selected="false" class="uppercase ff-sans-cond text-light letter-spacing-2">Titan</button>
     </div>
 
     <!-- destination content -->
-    <article class="destination-info">
+    <article class="destination-info flow">
       <!-- name -->
       <h2 class="fs-800 uppercase ff-serif">Moon</h2>
 
