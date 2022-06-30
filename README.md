@@ -3,6 +3,7 @@ A Space Travel website built with HTML, CSS, and JavaScript
 - This is the companion project of the course [Build a space travel website](https://scrimba.com/learn/spacetravel) by Kevin Powell
 - I've added new features to the original project as well as improve its UI
 - This website is responsive
+- See the [origional challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3) on [Frontend Mentor](https://www.frontendmentor.io/home)
 
 ### Home page demos
 <p align="center">
