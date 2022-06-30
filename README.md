@@ -21,7 +21,8 @@ A Space Travel website built with HTML, CSS, and JavaScript
   - Dot indicators
   - Number indicators
 - To-do
-  - scrollbar-gutter
+  - Research scrollbar-gutter
+  - Add page transition effects
 - Responsive implementing order
   - Mobilde
   - Tablet (`@media (min-width: 35rem)`)

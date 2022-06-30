@@ -7,7 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
 
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,11 +21,11 @@
 
   <!-- Our custom CSS -->
   <link rel="stylesheet" href="../assets/css/index.css">
-  <title>Frontend Mentor | Space tourism website</title>
+  <title>Technology</title>
 
   <!-- JavaScript files -->
-  <script src="../assets/js/index.js" defer></script>
-  <!-- <script src="../assets/js/tabs.js" defer></script> -->
+  <script src="../assets/js/navigation.js" defer></script>
+  <script src="../assets/js/tabs.js" defer></script>
 
 </head>
 
@@ -31,7 +34,7 @@
   <header class="primary-header flex">
     <!-- logo -->
     <div>
-      <img src="../assets/img/shared/logo.svg" alt="space tourism logo" class="logo">
+      <a href="./index.html"><img src="../assets/img/shared/logo.svg" alt="space tourism logo" class="logo"></a>
     </div>
 
     <!-- hamburger menu button -->
@@ -61,14 +64,23 @@
     <h1 class="numbered-title"><span aria-hidden="true">03</span> Space launch 101</h1>
 
     <!-- technology tabs -->
-    <div class="number-indicators flex">
-      <button aria-selected="true" class="ff-serif">1</button>
-      <button aria-selected="false" class="ff-serif">2</button>
-      <button aria-selected="false" class="ff-serif">3</button>
+    <div class="number-indicators flex" role="tablist" aria-label="technology list">
+      <button aria-selected="true" aria-controls="vehicle-tab" role="tab" data-image="vehicle-image" tabindex="0"
+        class="ff-serif">
+        1
+      </button>
+      <button aria-selected="false" aria-controls="capsule-tab" role="tab" data-image="capsule-image" tabindex="-1"
+        class="ff-serif">
+        2
+      </button>
+      <button aria-selected="false" aria-controls="spaceport-tab" role="tab" data-image="spaceport-image" tabindex="-1"
+        class="ff-serif">
+        3
+      </button>
     </div>
 
     <!-- vehicle content -->
-    <article class="technology-details flow" id="technology-tab" role="tabpanel" tabindex="0">
+    <article class="technology-details flow" id="vehicle-tab" role="tabpanel" tabindex="0">
       <h1 class="text-light fs-400 ff-sans-cond uppercase letter-spacing-1">The terminology...
         <span class="d-block fs-700 ff-serif text-white">Launch vehicle</span>
       </h1>
@@ -81,7 +93,7 @@
     </article>
 
     <!-- capsule content -->
-    <article hidden class="technology-details flow" id="technology-tab" role="tabpanel" tabindex="0">
+    <article hidden class="technology-details flow" id="capsule-tab" role="tabpanel" tabindex="0">
       <h1 class="text-light fs-400 ff-sans-cond uppercase letter-spacing-1">The terminology...
         <span class="d-block fs-700 ff-serif text-white">Space capsule</span>
       </h1>
@@ -94,8 +106,8 @@
     </article>
 
     <!-- spaceport content -->
-    <article hidden class="technology-details flow" id="technology-tab" role="tabpanel" tabindex="0">
-      <h1 class="text-light fs-400 ff-sans-cond uppercase letter-spacing-1">The terminology...>
+    <article hidden class="technology-details flow" id="spaceport-tab" role="tabpanel" tabindex="0">
+      <h1 class="text-light fs-400 ff-sans-cond uppercase letter-spacing-1">The terminology...
         <span class="d-block fs-700 ff-serif text-white">Spaceport</span>
       </h1>
       <p class="text-light">
@@ -123,7 +135,6 @@
     <picture hidden id="spaceport-image">
       <img id="spaceport-landscape" src="../assets/img/technology/image-spaceport-landscape.jpg" alt="Spaceport">
       <img id="spaceport-portrait" src="../assets/img/technology/image-spaceport-portrait.jpg" alt="Spaceport">
-
     </picture>
 
   </main>
