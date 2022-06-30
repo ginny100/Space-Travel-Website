@@ -1,6 +1,52 @@
 # Space Travel Website
 A Space Travel website built with HTML, CSS, and JavaScript
 - This is the companion project of the course [Build a space travel website](https://scrimba.com/learn/spacetravel) by Kevin Powell
+- I've added new features to the original project as well as improve its UI
+- This website is responsive
+
+### Home page demos
+<p align="center">
+  <td><img src="./assets/img/demo/home/home-large.png" width=500></td>
+</p>
+<table>
+  <tr>
+    <td><img src="./assets/img/demo/home/home-medium.png" width=500></td>
+    <td><img src="./assets/img/demo/home/home-small.png" width=500></td>
+  </tr>
+ </table>
+
+### Destination page demos
+<p align="center">
+  <td><img src="./assets/img/demo/destination/destination-large.png" width=500></td>
+</p>
+<table>
+  <tr>
+    <td><img src="./assets/img/demo/destination/destination-medium.png" width=500></td>
+    <td><img src="./assets/img/demo/destination/destination-small.png" width=500></td>
+  </tr>
+ </table>
+
+### Crew page demos
+<p align="center">
+  <td><img src="./assets/img/demo/crew/crew-large.png" width=500></td>
+</p>
+<table>
+  <tr>
+    <td><img src="./assets/img/demo/crew/crew-medium.png" width=500></td>
+    <td><img src="./assets/img/demo/crew/crew-small.png" width=500></td>
+  </tr>
+ </table>
+
+### Technology page demos
+<p align="center">
+  <td><img src="./assets/img/demo/technology/technology-large.png" width=500></td>
+</p>
+<table>
+  <tr>
+    <td><img src="./assets/img/demo/technology/technology-medium.png" width=500></td>
+    <td><img src="./assets/img/demo/technology/technology-small.png" width=500></td>
+  </tr>
+ </table>
 
 ## Some topics covered in this project
 - `Utility classes`
