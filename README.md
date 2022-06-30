@@ -20,3 +20,9 @@ A Space Travel website built with HTML, CSS, and JavaScript
   - Underlined indicators
   - Dot indicators
   - Number indicators
+- To-do
+  - scrollbar-gutter
+- Responsive implementing order
+  - Mobilde
+  - Tablet (`@media (min-width: 35rem)`)
+  - Desktop (`@media (min-width: 45rem)`)

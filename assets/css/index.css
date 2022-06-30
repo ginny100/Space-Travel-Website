@@ -100,7 +100,10 @@ body {
 img,
 picture {
     max-width: 100%;
-    display: block;
+    /* display: block;  */
+    /* Since we use the hidden html attribute for picture, the above line needs to be commented out.
+       The reason is hidden gets very easily overwritten by CSS if we have something like display inline/inline-block, 
+       or anything display-related in the CSS, hidden won't work  */
 }
 
 /* Reset form elements */
@@ -129,7 +132,6 @@ select {
 /* ---------------------------- */
 
 /* general */
-
 .flex {
     display: flex;
     gap: var(--gap, 1rem);
@@ -142,6 +144,7 @@ select {
 
 .d-block {
     display: block;
+    padding-top: 1rem;
 }
 
 .flow>*:where(:not(:first-child)) {
@@ -280,7 +283,6 @@ select {
     font-size: var(--fs-200);
 }
 
-
 .fs-900,
 .fs-800,
 .fs-700,
@@ -288,6 +290,7 @@ select {
     line-height: 1.1;
 }
 
+/* number title */
 .numbered-title {
     font-family: var(--ff-sans-cond);
     font-size: var(--fs-500);
@@ -348,6 +351,7 @@ select {
     align-items: center;
 }
 
+/* primary navigation */
 .primary-navigation {
     /* This selector should be written before media query.
        Otherwise, it will be overriden by the following media query in this case */
@@ -458,6 +462,11 @@ select {
     }
 }
 
+.tab-list {
+    --gap: 2rem;
+}
+
+/* underline indicators */
 .underline-indicators>* {
     cursor: pointer;
     /* Select all chidren of the underline indicators */
@@ -478,10 +487,7 @@ select {
     border-color: hsl(var(--clr-white) / 1);
 }
 
-.tab-list {
-    --gap: 2rem;
-}
-
+/* dot indicator */
 .dot-indicators>* {
     cursor: pointer;
     border: 0;
@@ -499,17 +505,20 @@ select {
     background-color: hsl(var(--clr-white) / 1);
 }
 
+/* number indicators */
 .number-indicators>* {
     cursor: pointer;
     border: 0.5;
     border-color: hsl(var(--clr-white) / .15);
-    display: block;
-    height: 3.5em;
-    width: 3.5em;
+    display: flex;
+    height: 3em;
+    width: 3em;
     border-radius: 50%;
-    padding: .5em;
+    padding: .7em;
     background-color: transparent;
     font-size: var(--fs-500);
+    justify-content: space-evenly;
+    margin-bottom: .5em;
 }
 
 .number-indicators>*:hover,
@@ -525,6 +534,14 @@ select {
 
 .number-indicators>[aria-selected="false"] {
     color: hsl(var(--clr-white));
+}
+
+@media (min-width: 35em) {}
+
+@media (min-width: 45em) {
+    .number-indicators {
+        display: grid;
+    }
 }
 
 /* ---------------------------- */
@@ -590,13 +607,30 @@ body {
     }
 }
 
+/* technology */
+.technology {
+    background-image: url(../img/technology/background-technology-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+    .technology {
+        background-position: center center;
+        background-image: url(../img/technology/background-technology-tablet.jpg);
+    }
+}
+
+@media (min-width: 45rem) {
+    .technology {
+        background-image: url(../img/technology/background-technology-desktop.jpg);
+    }
+}
+
 /* ---------------------------- */
-/* Layout --------------------- */
+/* Layouts -------------------- */
 /* ---------------------------- */
 
 .grid-container {
     text-align: center;
-    /* border: 5px solid limegreen; */
     display: grid;
     place-items: center;
     padding-inline: 1rem;
@@ -624,6 +658,7 @@ body {
 .grid-container--destination>picture {
     grid-area: image;
     max-width: 60%;
+    align-self: start;
 }
 
 .grid-container--destination>.tab-list {
@@ -699,7 +734,8 @@ body {
     .grid-container {
         text-align: left;
         column-gap: var(--container-gap, 2rem);
-        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
+        /* grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr); */
+        grid-template-columns: minmax(1rem, 0.5fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
     }
 
     .grid-container--home {
@@ -724,8 +760,7 @@ body {
             '. image content .';
     }
 
-    .grid-container--destination>picture,
-    .grid-container--crew>picture {
+    .grid-container--destination>picture {
         max-width: 90%;
     }
 
@@ -735,25 +770,124 @@ body {
     }
 
     .grid-container--crew {
+        grid-template-columns: minmax(1rem, 0.5fr) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr);
+        justify-items: start;
         grid-template-areas:
             '. title title .'
             '. content image .'
             '. tabs image .';
     }
 
-    .grid-container--crew>.dot-indicators {
+    /* .grid-container--crew>.dot-indicators {
         justify-self: start;
-    }
+    } */
 
     .grid-container--crew>picture {
+        grid-column: span 2;
         align-self: end;
+        max-width: 100%;
     }
 }
 
-/* .grid-container>*:first-child {
-    outline: 1px solid red;
+/* technology layout */
+.grid-container--technology {
+    --flow-space: 2rem;
+    grid-template-areas:
+        'title'
+        'image'
+        'tabs'
+        'content';
+    padding-inline: 0;
 }
 
-.grid-container>*:last-child {
-    outline: 1px solid yellow;
-} */
+.grid-container--technology>picture {
+    grid-area: image;
+}
+
+.grid-container--technology>.number-indicators {
+    grid-area: tabs;
+}
+
+.grid-container--technology>.technology-details {
+    grid-area: content;
+    padding-inline: 2rem;
+}
+
+.grid-container--technology #vehicle-portrait,
+#capsule-portrait,
+#spaceport-portrait {
+    display: none;
+}
+
+@media (min-width: 35em) {
+    .grid-container--technology>.numbered-title {
+        padding-left: 1rem;
+    }
+
+    .grid-container--technology>.technology-details {
+        grid-area: content;
+        padding-inline: 9rem;
+        padding-bottom: 5rem;
+    }
+
+    .technology-details {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .grid-container--technology {
+        padding-bottom: 0;
+        grid-template-areas:
+            'title'
+            'image'
+            'tabs'
+            'content';
+    }
+
+    .grid-container--technology #vehicle-portrait,
+    #capsule-portrait,
+    #spaceport-portrait {
+        display: none;
+    }
+}
+
+@media (min-width: 45em) {
+    .grid-container--technology {
+        padding-inline-start: 0.5rem;
+        grid-template-columns: minmax(1rem, 0.5fr) minmax(0, 6rem) minmax(0, 35rem) minmax(0, 20rem) minmax(1rem, 1fr);
+        grid-template-areas:
+            '. title title title .'
+            '. tabs content image .';
+        justify-items: end;
+        align-content: end;
+    }
+
+    .technology-details {
+        justify-content: start;
+    }
+
+    .grid-container--technology>.technology-details {
+        grid-area: content;
+        padding-left: 1.5rem;
+        padding-right: 0rem;
+    }
+
+    .grid-container--technology>picture {
+        grid-column: span 2;
+        align-self: end;
+        max-width: 85%;
+        padding-bottom: 5rem;
+    }
+
+    .grid-container--technology #vehicle-landscape,
+    #capsule-landscape,
+    #spaceport-landscape {
+        display: none;
+    }
+
+    .grid-container--technology #vehicle-portrait,
+    #capsule-portrait,
+    #spaceport-portrait {
+        display: block;
+    }
+}
